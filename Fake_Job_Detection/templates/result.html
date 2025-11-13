@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prediction Result</title>
+<style>
+        body { font-family: Arial; background-color: #f9f9f9; text-align: center; padding: 50px; }
+        .card { background: white; padding: 30px; border-radius: 12px; width: 50%; margin: auto; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); }
+        h2 { color: #333; }
+        .fake { color: red; font-weight: bold; }
+        .real { color: green; font-weight: bold; }
+        a { display: inline-block; margin-top: 20px; text-decoration: none; color: #007bff; }
+        a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="card">
+<h2>Prediction Result</h2>
+<p><b>Job Description:</b> {{ description }}</p>
+<h3>Prediction: 
+            {% if label == 'Fake Job' %}
+<span class="fake">{{ label }}</span>
+            {% else %}
+<span class="real">{{ label }}</span>
+            {% endif %}
+</h3>
+<p>Confidence: {{ confidence }}%</p>
+<a href="/">🔙 Go Back</a>
+</div>
+</body>
+</html>
+
+ 
